@@ -1,4 +1,5 @@
 import pyrebase
+from werkzeug.security import generate_password_hash, check_password_hash
 firebaseConfig = {
   "apiKey": "AIzaSyBaAdm_AmdgGQLcdRCu1f103faXCYSajVs",
   "authDomain": "wytnomo.firebaseapp.com",
@@ -26,6 +27,7 @@ def firebaseController(data):
 
 def newPatient(data):
     if db.child("Patients").child(data["cell_number"]).get().val() == None:
+        data["password"] = generate_password_hash(data["password"], method='sha256')
         db.child("Patients").child(data["cell_number"]).set(data)
         return 201
     else :
@@ -34,6 +36,7 @@ def newPatient(data):
 def newDriver(data):
     print(db.child("Driver").child(data["cell_number"]).get().val())
     if db.child("Driver").child(data["cell_number"]).get().val() == None:
+        data["password"] = generate_password_hash(data["password"], method='sha256')
         db.child("Driver").child(data["cell_number"]).set(data)
         return 201
     else :
@@ -41,6 +44,7 @@ def newDriver(data):
 
 def newHelper(data):
     if db.child("Helper").child(data["cell_number"]).get().val() == None:
+        data["password"] = generate_password_hash(data["password"], method='sha256')
         db.child("Helper").child(data["cell_number"]).set(data)
         return 201
     else :
@@ -51,12 +55,8 @@ def getUser(data):
     for types in Types:
         if db.child(types).child(data["cell_number"]).get().val() != None:
             for key in db.child(types).child(data["cell_number"]).get().each():
-                if key.key() == "password" and key.val() == data["password"]:
+                if key.key() == "password" and check_password_hash(key.val(),data["password"])  :
                     return {"msg":"ok"},201
         
     return {"msg":"Incorrect username or password"},401
 
-# print(getUser({
-#     "cell_number":"077082628",
-#     "password":"12345",
-# }))

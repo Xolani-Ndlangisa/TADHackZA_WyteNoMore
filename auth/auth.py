@@ -1,5 +1,6 @@
 from firebase.firebase import firebaseController,getUser
 
+
 class Auth:
 
     def login(self,data):
