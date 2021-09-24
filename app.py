@@ -1,18 +1,27 @@
-from flask import Flask
-
+from flask import Flask, request, jsonify
+import auth.auth as auth
+from firebase.firebase import firebaseController,getUser
 app = Flask(__name__)
+
+user = auth.Auth()
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello, World'
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/api/auth', methods=['GET', 'POST'])
 def login():
-    return 'login'
+    if request.method == "POST":
+        data = request.json
+        status = user.login(data)
+        return status
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/api/users', methods=['GET', 'POST'])
 def signup():
-    return 'signup'
+    if request.method == "POST":
+        data = request.json
+        status =user.signup(data)
+        return status
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
