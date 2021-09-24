@@ -7,11 +7,11 @@ def hello_world():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    return 'Hello, World!'
+    return ''
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    return 'Hello, World!'
+    return ''
 
 if __name__ == '__main__':
     app.run()
