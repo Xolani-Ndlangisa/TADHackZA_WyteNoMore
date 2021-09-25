@@ -25,4 +25,3 @@ def signup():
 if __name__ == '__main__':
     app.run(debug=True)
 
-# https://www.atinkanews.net/2021/09/24/blood-and-water-season-2-full-hd-available-for-free-download/
