@@ -20,12 +20,12 @@ export default function App() {
     <div className={classes.root}>
 
       <Toolbar>
-      <CssBaseline />
+      <CssBaseline classes=""/>
       <Header />
       </Toolbar>
       <div>
       <Searchbar/>
-
+      
       </div>
 
       {/* <PlaceToVisit /> */}
