@@ -1,4 +1,8 @@
+from flask.wrappers import Response
+from requests.models import HTTPError
+from firebase.verify import verify
 from flask import Flask, json, request, jsonify
+import requests
 import auth.auth as auth
 app = Flask(__name__)
 
@@ -21,10 +25,21 @@ def login():
 
 @app.route('/api/users', methods=['GET', 'POST'])
 def signup():
+    fields = ['name', "surname", "gender", "cell_number", "id", "password", "type", ]
     if request.method == "POST":
         data = request.json
-        status =user.signup(data)
-        return status
+        for each in fields:
+            if not data.get(each):
+                return json.dumps({"mssg":"Incomplete data"}), 401
+            
+        res = verify(data)
+        if res != HTTPError:
+            return user.signup(data)
+        else:
+            return json.dumps({"mssg": "Verification failed"}), 
+        
+
+        
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
