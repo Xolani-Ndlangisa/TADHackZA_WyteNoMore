@@ -1,6 +1,6 @@
 import React from "react";
 
-class NotBooked extends React.Component {
+class Delivery extends React.Component {
 
     continue = e =>{
         e.preventDefault();
@@ -13,17 +13,8 @@ class NotBooked extends React.Component {
     render() {
         const {values, handleChange} = this.props; 
         return (
-            <div className="w3-display-topmiddle">
+            <div className="w3-display-middle">
 
-                <label className="w3-label">Address</label>
-                <select className = "w3-input" type="text">
-                    <option>--</option>
-                    <option>JHB</option>
-                    <option>CPT</option>
-                    <option>DBN</option>
-                </select>
-
-                <br />
 
                 <label  className="w3-label">Date</label>
                 <select className = "w3-input" type="text">
@@ -33,21 +24,17 @@ class NotBooked extends React.Component {
                 </select>
                 <br />
 
-                <label  className="w3-label">Virtual BootCamp ..?</label>
-                <select className = "w3-input" type="text" >
-                    <option>--</option>
-                    <option>NO</option>
-                    <option>YES</option>
-                </select>
+                <label  className="w3-label">Name</label>
+                <input className = "w3-input" type="text" ></input>
                 <br />
                 <input class="w3-check" type="checkbox"/>
                 <label class="w3-validate">  <p>Confirm that information is accurate.</p></label>
                 <br />
                 
-                <button className = "btn btn-primary" type="button" onClick= {this.continue}> Book.!!</button>
+                <button className = "btn btn-primary" type="button" onClick= {this.continue}>Delivery Request</button>
             </div>
         )
     }
 }
 
-export default NotBooked;
+export default Delivery;

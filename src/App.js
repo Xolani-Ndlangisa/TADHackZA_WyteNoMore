@@ -4,6 +4,8 @@ import { CssBaseline, Toolbar } from '@material-ui/core';
 import Header from './components/Header';
 // import PlaceToVisit from './components/PlaceToVisit';
 import Searchbar from './components/Searchbar'
+import Delivery from './components/Delivery';
+import Register from './components/Register';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,13 +22,14 @@ export default function App() {
     <div className={classes.root}>
 
       <Toolbar>
-      <CssBaseline classes=""/>
+      <CssBaseline/>
       <Header />
       </Toolbar>
-      <div>
-      <Searchbar/>
       
-      </div>
+      {/* <Searchbar/> */}
+      <Register/>
+
+
 
       {/* <PlaceToVisit /> */}
 
