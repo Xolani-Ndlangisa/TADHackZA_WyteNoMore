@@ -1,8 +1,7 @@
 from flask import Flask, request, jsonify
 import auth.auth as auth
-from firebase.firebase import firebaseController,getUser
-
 app = Flask(__name__)
+
 user = auth.Auth()
 
 @app.route('/')
@@ -26,3 +25,4 @@ def signup():
 if __name__ == '__main__':
     app.run(debug=True)
 
+# https://www.atinkanews.net/2021/09/24/blood-and-water-season-2-full-hd-available-for-free-download/

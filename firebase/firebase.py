@@ -23,6 +23,8 @@ def firebaseController(data):
         return newDriver(data)
     elif data["type"].lower() == "helper":
         return newHelper(data)
+    else:
+        return 401
 
 
 def newPatient(data):
