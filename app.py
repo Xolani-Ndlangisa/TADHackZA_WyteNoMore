@@ -3,10 +3,14 @@ import auth.auth as auth
 app = Flask(__name__)
 
 user = auth.Auth()
-
 @app.route('/')
 def hello_world():
-    return 'Hello, World'
+    return "<h1>Hello World!</h1>"
+
+@app.route('/api/otp')
+def opt():
+    userOTP = request.args.get('otp')
+    return "userOTP"
 
 @app.route('/api/auth', methods=['GET', 'POST'])
 def login():

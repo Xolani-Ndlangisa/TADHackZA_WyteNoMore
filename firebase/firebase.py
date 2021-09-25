@@ -62,3 +62,12 @@ def getUser(data):
         
     return {"msg":"Incorrect username or password"},401
 
+# def verify(data,otp):
+#     Types =["Helper","Driver","Patients"]
+#     for types in Types:
+#         if db.child(types).child(data["cell_number"]).get().val() != None:
+#             for key in db.child(types).child(data["cell_number"]).get().each():
+#                 if key.key() == "password" and check_password_hash(key.val(),data["password"])  :
+#                     return {"msg":"ok"},201
+        
+#     return {"msg":"Incorrect username or password"},401
