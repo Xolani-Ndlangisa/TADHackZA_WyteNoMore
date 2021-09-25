@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 import auth.auth as auth
 from firebase.firebase import firebaseController,getUser
-app = Flask(__name__)
 
+app = Flask(__name__)
 user = auth.Auth()
 
 @app.route('/')
@@ -25,3 +25,4 @@ def signup():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
