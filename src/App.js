@@ -3,9 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline, Toolbar } from '@material-ui/core';
 import Header from './components/Header';
 // import PlaceToVisit from './components/PlaceToVisit';
-import Searchbar from './components/Searchbar'
+import Login from './components/Login';
+import Checkup from './components/Checkup';
 import Delivery from './components/Delivery';
-import Register from './components/Register';
+import Home from './Home';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,9 +26,9 @@ export default function App() {
       <CssBaseline/>
       <Header />
       </Toolbar>
-      
       {/* <Searchbar/> */}
-      <Register/>
+      <Home/>
+      
 
 
 
