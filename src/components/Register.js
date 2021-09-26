@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-const baseURL = "http://wytenomore.herokuapp.com/api/users";
+const baseURL = "http://localhost:5000/api/users";
 
 
 class Register extends React.Component {

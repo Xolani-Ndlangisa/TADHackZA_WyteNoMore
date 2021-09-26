@@ -26,14 +26,9 @@ export default function App() {
       <h1>Wyt NoMo</h1>
       <p>Meds dilivered, Basic Health check-up !</p> 
     </div>
-      <Toolbar>
-      <CssBaseline/>
-      <Header />
-      </Toolbar>
+      
 
-      <Home/>
-
-
+    <Home/>
     </div>
   );
 }
