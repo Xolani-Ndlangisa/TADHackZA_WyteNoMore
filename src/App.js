@@ -20,9 +20,10 @@ const useStyles = makeStyles((theme) => ({
 export default function App() {
   const classes = useStyles();
   return (
+  
     <div className={classes.root}>
       <div class="jumbotron text-center">
-      <h1>WYE-NO-MORE</h1>
+      <h1>Wyt NoMo</h1>
       <p>Meds dilivered, Basic Health check-up !</p> 
     </div>
       <Toolbar>

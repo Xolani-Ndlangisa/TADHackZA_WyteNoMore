@@ -5,34 +5,36 @@ const baseURL = "http://localhost:5000/api/users";
 
 class Mainpage extends React.Component {
     
-    register = e =>{
-        this.props.nextStep("register")    
+    deliver = e =>{
+        this.props.nextStep("delivery")    
     }
 
-    login = e =>{
-        this.props.nextStep("login")    
+    checkup = e =>{
+        this.props.nextStep("checkup")    
     }
-    render() {
+    render() {  
         const {values, handleChange} = this.props;
         return (
             <div className="col-sm-4" >
+                <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+             <input type="text" class="form-control" placeholder="Scan a queue"></input>
+             </div>
                 <div>
                     
                 <div class="jumbotron text-center">
                     <h3>Medicine Delivery</h3>
-                    <p>Avoid quees</p>
-                    <button className = "btn btn-primary" type="button" onClick= {this.submit}> Book Now.!!</button>
+                    <p>Avoid quees, Take the Load off hospitals</p>
+                    <button className = "btn btn-primary" type="button" onClick= {this.deliver}>Make Delivery Request</button>
                 </div>
 
                 <div class="jumbotron text-center">
-                    <p>Basic Health Check-up ..! !</p> 
+                    <h3>Health Check up .. </h3>
+                    <p>With Dedicated retired indivituals ..</p> 
+                    <button className = "btn btn-primary" type="button" onClick= {this.checkup}>Request Checkup</button>
                 </div>
 
-                <div class="jumbotron text-center">
-                    <p>and more ..! !</p> 
-                </div>
-                <button className = "btn btn-primary" type="button" onClick= {this.register}> Register Now.!!</button>
-                <button className = "btn btn-primary" type="button" onClick= {this.login}> Login.!!</button>
+
                 </div>
             </div>
         )

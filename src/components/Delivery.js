@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-const baseURL = "http://localhost:5000/api/users";
+const baseURL = "http://wytenomore.herokuapp.com/api/users";
 
 
 class Delivery extends React.Component {
@@ -27,6 +27,7 @@ class Delivery extends React.Component {
         .then((response) => {
             console.log(response)
         });
+        this.props.nextStep("main")
     }
 
         // Procceed to the next step
@@ -51,11 +52,14 @@ class Delivery extends React.Component {
 
     render() {
         return (
-            <div className="w3-display-middle">
-                <h3>Request Delivery</h3>
-                <br  />
+            <div className="col-sm-4">
+                
+                <div class="jumbotron text-center">
+                <h3>Get them delivered to your home</h3>
+                    <p>Have your meds delivered at your door step  </p>
+                </div>
 
-
+                <div class="jumbotron text-center">
                 <label  className="w3-label">Address</label>
                 <input className = "w3-input" type="address" onChange={this.handleChange('address')} name='address' ></input>
 
@@ -68,7 +72,8 @@ class Delivery extends React.Component {
                 <input className = "w3-input" type="date" onChange={this.handleChange('date')} name='date'></input>
 
                 <br />
-                <button className = "btn btn-primary" type="button" onClick= {this.submit}> Request.!!</button>
+                <button className = "btn btn-primary" type="button" onClick= {this.submit}>Request</button>
+                </div>
             </div>
         )
     }

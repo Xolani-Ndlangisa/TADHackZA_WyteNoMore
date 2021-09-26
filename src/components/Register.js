@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-const baseURL = "http://localhost:5000/api/users";
+const baseURL = "http://wytenomore.herokuapp.com/api/users";
 
 
 class Register extends React.Component {
@@ -10,17 +10,21 @@ class Register extends React.Component {
 
         axios
         .post(baseURL, {
-            body: JSON.stringify(this.props)
+            body: JSON.stringify(this.state)
         })
         .then((response) => {
             console.log(response)
-            this.props.nextStep()
         });
+        this.props.nextStep("main")
     }
     render() {
         return (
             <div className="col-sm-4">
-
+                <div class="jumbotron text-center">
+                <h3>Create your subscribtion</h3>
+            
+                </div>
+                <div class="jumbotron text-center">
                 <label className="w3-label">Register as </label>
                 <select className = "w3-input" type="text"  onChange={this.props.handleChange('type')} name='type'>
                     <option>--</option>
@@ -61,6 +65,7 @@ class Register extends React.Component {
 
                 
                 <button className = "btn btn-primary" type="button" onClick= {this.submit}> Register Now.!!</button>
+                </div>
             </div>
         )
     }

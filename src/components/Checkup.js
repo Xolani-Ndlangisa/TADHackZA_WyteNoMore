@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-const baseURL = "http://localhost:5000/api/users";
+const baseURL = "http://wytenomore.herokuapp.com/api/users";
 
 
 class Checkup extends React.Component {
@@ -22,11 +22,12 @@ class Checkup extends React.Component {
 
         axios
         .post(baseURL, {
-            body: JSON.stringify(this.props)
+            body: JSON.stringify(this.state)
         })
         .then((response) => {
             console.log(response)
         });
+        this.props.nextStep('main')
     }
 
 
@@ -35,34 +36,30 @@ class Checkup extends React.Component {
             <div className="col-sm-4">
                 
                 <div class="jumbotron text-center">
-                    
-                    <h3>Try Basic Health check-up, !</h3>
-                    <button className = "btn btn-primary" type="button" onClick= {this.submit}> Book Now.!!</button>
-                </div>
+                    <h4>Health check-up booking!</h4>
+                    <p>We partner with passionate indivituals, who care for you.</p>
 
+                </div>
+                <div class="jumbotron text-center">
+                <label  className="w3-label">Subscribtion Type</label>
                 <select className = "w3-input" type="text"  onChange={this.props.handleChange('provider')} name='provider'>
                     <option>--</option>
                     <option>Retired Nurse</option>
                     <option>Medicine Student</option>
                     <option>Quilified</option>
                 </select>
-                <br />
+             
                 
 
-                <label  className="w3-label">Prescription no</label>
-                <input className = "w3-input" type="number" onChange={this.props.handleChange('prescription')} name='prescription'></input>
 
-
-                <label  className="w3-label">Additional info</label>
-                <text className = "w3-input" type="text" onChange={this.props.handleChange('additional')} name='additional'></text>
-
+                <br />
                 <label  className="w3-label">Address</label>
                 <input className = "w3-input" type="text" onChange={this.props.handleChange('address')} name='address'></input>
-
+                <br />
                 <label  className="w3-label">Date</label>
                 <input className = "w3-input" type="date" onChange={this.props.handleChange('time')} name='time'></input>
 
-
+                <br />
                 <label  className="w3-label">Include Vaccine</label>
                 <select className = "w3-input" type="text"  onChange={this.props.handleChange('vaccine')} name='vaccine'>
                     <option>--</option>
@@ -70,6 +67,7 @@ class Checkup extends React.Component {
                     <option>no</option>
                 </select><br />
                 <button className = "btn btn-primary" type="button" onClick= {this.submit}> Register Now.!!</button>
+                </div>
             </div>
         )
     }

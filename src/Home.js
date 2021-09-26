@@ -11,7 +11,7 @@ var step = 1;
 export class Home extends Component {
   
     state = {
-        step : "main",
+        step : "login",
         cell_number: "",
         name: "",
         surname: "",
