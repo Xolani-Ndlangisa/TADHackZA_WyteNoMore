@@ -17,6 +17,13 @@ def opt():
     userOTP = request.args.get('otp')
     return "userOTP"
 
+@app.route('/api/delivary')
+def checkUp():
+    if request.method == "POST":
+        data = request.json
+        checkUp(data)
+        return 201
+
 @app.route('/api/checkup')
 def checkUp():
     if request.method == "POST":
