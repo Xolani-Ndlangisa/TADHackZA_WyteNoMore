@@ -6,25 +6,22 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function Homecare() {
+export default function Delivery() {
   return (
-      
     <Card sx={{ maxWidth: 300 }}>
       <CardMedia
         component="img"
         alt="green iguana"
         height="300"
-        image="images/Checkup.jpeg"
+        image="/images/Delivery.jpeg"
       />
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
-          Home Care
+        <Typography gutterBottom variant="h5" component="div">
+          Delivery
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        Lazy to go  the hospital!
-        Well you can now request 
-        to see a qualified nurse and they’ll 
-        be there within less than 30mins. 
+        Get your medicine delivered to 
+        you every month.
         </Typography>
       </CardContent>
       <CardActions>

@@ -11,7 +11,7 @@ import Homecare from './components/Homecare';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '10vh',
+    minHeight: '100vh',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/images/health.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',

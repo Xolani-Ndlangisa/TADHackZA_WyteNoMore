@@ -8,16 +8,16 @@ import Typography from '@mui/material/Typography';
 
 export default function Student() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300 }}>
       <CardMedia
         component="img"
         alt="green iguana"
-        height="140"
+        height="300"
         image="/images/Student.jpeg"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Students
+          Careers
         </Typography>
         <Typography variant="body2" color="text.secondary">
             You can now join our team.

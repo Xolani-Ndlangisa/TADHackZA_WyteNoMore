@@ -21,13 +21,10 @@ const useStyles = makeStyles((theme) => ({
   },
   appbarTitle: {
     flexGrow: '1',
-  },
-  icon: {
-    color: '#fff',
-    fontSize: '2rem',
+    color: '#000000'
   },
   colorText: {
-    color: '#5AFF3D',
+    color: '#FFF000 ',
   },
   container: {
     textAlign: 'center',
@@ -54,11 +51,8 @@ export default function Header() {
           <h1 className={classes.appbarTitle}>
             Wyt<span className={classes.colorText}>NoMO</span>
           </h1>
-          <Button variant="outlined">Signin</Button> <br/>
-          <Button variant="outlined">Register</Button>
-
-          
-
+          <Button variant="outlined" href="www.google.com">Signin</Button> 
+          <Button variant="outlined" href="<Form>">Register</Button>
         </Toolbar>
       </AppBar>
     </div>

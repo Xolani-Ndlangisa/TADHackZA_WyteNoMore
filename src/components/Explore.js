@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Homecare from './Homecare';
 import {Grid, Box } from '@material-ui/core/';
 import Student from './Student';
+import Delivery from './Delivery';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,7 +19,7 @@ export default function () {
         <Grid container spacing={5} >
         <Homecare/>
         <Student/>
-        <Homecare/>
+        <Delivery/>
         </Grid>
         </Box>
     </div>

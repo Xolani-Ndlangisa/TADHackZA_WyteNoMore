@@ -23,11 +23,6 @@
             value={name}
             onChange={handleChange}
         />
-        {/* <TextField
-            id="outlined-uncontrolled"
-            label="Uncontrolled"
-            defaultValue="When"
-        /> */}
         </Box>
     );
     }
