@@ -31,7 +31,7 @@ class Login extends React.Component {
         })
         .catch(error => console.log('error', error));
 
-        this.props.nextStep()
+        this.props.nextStep("checkup")
 
     }
 
@@ -40,7 +40,7 @@ class Login extends React.Component {
     render() {
         const {values, handleChange} = this.props;
         return (
-            <div className="w3-display-middle">
+            <div className="col-sm-4">
                 <h3>Login</h3>
                 
                 <label  className="w3-label">Cell Number</label>

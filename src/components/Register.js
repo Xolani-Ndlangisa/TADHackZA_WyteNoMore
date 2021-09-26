@@ -19,7 +19,7 @@ class Register extends React.Component {
     }
     render() {
         return (
-            <div className="w3-display-middle">
+            <div className="col-sm-4">
 
                 <label className="w3-label">Register as </label>
                 <select className = "w3-input" type="text"  onChange={this.props.handleChange('type')} name='type'>

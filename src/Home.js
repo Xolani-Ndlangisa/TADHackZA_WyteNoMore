@@ -5,11 +5,13 @@ import Register from './components/Register';
 import Header from './components/Header';
 import Delivery from './components/Delivery';
 import Login from './components/Login';
+import Mainpage from './components/Mainpage';
+
 var step = 1;
 export class Home extends Component {
   
     state = {
-        step : 1,
+        step : "main",
         cell_number: "",
         name: "",
         surname: "",
@@ -22,10 +24,10 @@ export class Home extends Component {
     }
   
     // Procceed to the next step
-    nextStep = () => {
+    nextStep = (e) => {
       const {step} = this.state;
       this.setState({
-        step: step +1
+        step: e
       });
     }
 
@@ -90,7 +92,12 @@ export class Home extends Component {
         password2}
         
     switch (step) {
-        case 1:
+        case "main":
+            return (<Mainpage
+            nextStep = {this.nextStep}
+            handleChange = {this.handleChange}
+            values = {values}/>)
+        case "login":
         return(
             <Login 
             nextStep = {this.nextStep}
@@ -98,7 +105,7 @@ export class Home extends Component {
             values = {values}
             />
         )
-        case 2:
+        case "checkup":
         return(
             
         <Checkup 
@@ -107,7 +114,7 @@ export class Home extends Component {
         values = {values}
         />
         )
-      case 3:
+      case "register":
         return(
           <Register  
           nextStep = {this.nextStep}
@@ -116,7 +123,7 @@ export class Home extends Component {
           />
         )
 
-        case 4:
+        case "delivery":
         return(
           <Delivery  
           nextStep = {this.nextStep}

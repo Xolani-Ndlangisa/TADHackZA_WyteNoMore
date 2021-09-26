@@ -21,18 +21,17 @@ export default function App() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-
+      <div class="jumbotron text-center">
+      <h1>WYE-NO-MORE</h1>
+      <p>Meds dilivered, Basic Health check-up !</p> 
+    </div>
       <Toolbar>
       <CssBaseline/>
       <Header />
       </Toolbar>
-      {/* <Searchbar/> */}
+
       <Home/>
-      
 
-
-
-      {/* <PlaceToVisit /> */}
 
     </div>
   );

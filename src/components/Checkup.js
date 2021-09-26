@@ -32,8 +32,14 @@ class Checkup extends React.Component {
 
     render() {
         return (
-            <div className="w3-display-middle">
-                <h3>Request home based basic check up</h3><br />
+            <div className="col-sm-4">
+                
+                <div class="jumbotron text-center">
+                    
+                    <h3>Try Basic Health check-up, !</h3>
+                    <button className = "btn btn-primary" type="button" onClick= {this.submit}> Book Now.!!</button>
+                </div>
+
                 <select className = "w3-input" type="text"  onChange={this.props.handleChange('provider')} name='provider'>
                     <option>--</option>
                     <option>Retired Nurse</option>
