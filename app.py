@@ -4,6 +4,7 @@ from firebase.verify import verify
 from flask import Flask, json, request, jsonify
 import requests
 import auth.auth as auth
+from service.checkUp import checkUp
 app = Flask(__name__)
 
 user = auth.Auth()
@@ -15,6 +16,13 @@ def hello_world():
 def opt():
     userOTP = request.args.get('otp')
     return "userOTP"
+
+@app.route('/api/checkup')
+def checkUp():
+    if request.method == "POST":
+        data = request.json
+        checkUp(data)
+        return 201
 
 @app.route('/api/auth', methods=['GET', 'POST'])
 def login():
